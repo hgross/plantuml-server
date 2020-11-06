@@ -3,6 +3,7 @@ FROM ubuntu:xenial
 
 ARG PLANTUML_SERVER_VERSION=v1.2020.19
 ARG JETTY_RUNNER_VERSION=9.4.33.v20201020
+ENV PLANTUML_LIMIT_SIZE 8192
 
 # we need to ensure graphviz 2.38.0 since higher versions are known to cause trouble with PlantUML
 RUN apt-get update && apt-get install -y --no-install-recommends graphviz=2.38.0-12ubuntu2.1 fonts-wqy-zenhei maven wget && rm -rf /var/lib/apt/lists/*
